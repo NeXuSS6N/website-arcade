@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/accueil.css">
     <link rel="stylesheet" href="./css/sign-up.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <title>Sign Up</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
   
     <div class="login-container">
         <h2>Créer un compte</h2>
-        <form action="signup.php" method="post">
+        <form action="./php/connexion.php" method="post">
           <div class="input-group">
             <label for="username">Nom d'utilisateur</label>
             <input type="text" id="username" name="username" required>
@@ -45,5 +46,26 @@
         </form>
         <p>Déjà un membre ? <a href="./login.html">Connectez-vous ici</a>.</p>
     </div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Contactez-nous</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+        <div class="social-links">
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 ArcadeLab. Tous droits réservés.</p>
+      </div>
+    </footer>
 </body>
 </html>

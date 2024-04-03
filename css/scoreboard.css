@@ -1,0 +1,99 @@
+/* Styles généraux du scoreboard */
+#scoreboard {
+    background-color: #2c3e50;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+#scoreboard h2 {
+    color: #3498db;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#scoreboard select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #34495e;
+    color: #fff;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#scoreboard select:focus {
+    background-color: #2c3e50;
+}
+
+/* Animation pour les éléments du scoreboard */
+#scoreboard .score-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 10px;
+}
+
+#scoreboard .score-item:nth-child(odd) {
+    animation: fadeInUpOdd 0.5s ease forwards;
+}
+
+#scoreboard .score-item:nth-child(even) {
+    animation: fadeInUpEven 0.5s ease forwards;
+}
+
+@keyframes fadeInUpOdd {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUpEven {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styles généraux du menu déroulant */
+#jeux {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #34495e;
+    color: #fff;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+#jeux:focus {
+    background-color: #2c3e50;
+}
+
+/* Animation pour le menu déroulant */
+#jeux option {
+    background-color: #34495e;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#jeux option:hover {
+    background-color: #2c3e50;
+}

@@ -1,5 +1,11 @@
-/* Google Font Import Link */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+body {
+  background-image: url('/assets/backgroundhome.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,13 +21,13 @@ nav {
   width: 100%;
   padding: 20px;
   transition: all 0.4s ease;
-  background: linear-gradient(45deg, #4a77d4, #64b6ff); /* Updated background with gradient */
+  background: linear-gradient(45deg, #6a0483, #520575)
 }
 
 nav.sticky {
   padding: 15px 20px;
-  background: #4070f4;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: #be0cb6;
+  box-shadow: 0 5px 10px rgba(187, 32, 226, 0.1);
 }
 
 nav .nav-content {
@@ -37,7 +43,7 @@ nav .logo a {
   font-weight: 500;
   font-size: 35px;
   color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 nav.sticky .logo a {
@@ -55,7 +61,7 @@ nav.sticky .logo a {
 
 .nav-links li a {
   text-decoration: none;
-  color: #0E2431;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 500;
   padding: 10px 4px;
@@ -63,7 +69,7 @@ nav.sticky .logo a {
 }
 
 .nav-links li a:hover {
-  color: #4070f4;
+  color: #ff00f2;
 }
 
 nav.sticky .nav-links li a {
@@ -92,33 +98,4 @@ h2{
   text-align: justify;
   padding: 40px 80px;
   box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
-}
-#scoreboard {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #f4f4f4;
-  border-radius: 8px;
-}
-/* Menu déroulant */
-select {
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
-}
-
-select:hover {
-  border-color: #aaa;
-}
-
-select:focus {
-  outline: none;
-  border-color: #4070f4;
-  box-shadow: 0 0 5px rgba(64, 112, 244, 0.5);
 }
