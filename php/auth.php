@@ -95,9 +95,9 @@
 //------------------------------------
     $msg = "";
 
-    $sql = "SELECT password
+    $sql = "SELECT A_Mdp
             FROM account
-            WHERE Login = :login";
+            WHERE A_Username = :login";
     $stmt = $pdo_conn->prepare($sql);
     $stmt->bindParam(':login',$login);
     $stmt->execute();
@@ -148,7 +148,7 @@
     }
     else
     {
-        header("Location: index.php");
+        header("Location: login.php");
     }
 //------------------------------------
 

@@ -21,7 +21,7 @@
       <ul class="nav-links">
         <li><a href="./accueil.html">Accueil</a></li>
         <li><a href="./jeux.html">Jeux</a></li>
-        <li><a href="./login.html">Connexion</a></li>
+        <li><a href="./login.php">Connexion</a></li>
       </ul>
     </div>
   </nav>
@@ -47,7 +47,7 @@
           </div>
           <button type="submit">Créer un compte</button>
         </form>
-        <p>Déjà un membre ? <a href="./login.html">Connectez-vous ici</a>.</p>
+        <p>Déjà un membre ? <a href="./login.php">Connectez-vous ici</a>.</p>
     </div>
     <?php include 'footer.php'; ?>
 </body>

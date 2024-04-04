@@ -16,7 +16,7 @@
           <ul class="nav-links">
             <li><a href="../accueil.html">Accueil</a></li>
             <li><a href="../jeux.html">Jeux</a></li>
-            <li><a href="../login.html">Connexion</a></li>
+            <li><a href="./login.php">Connexion</a></li>
           </ul>
         </div>
       </nav>
@@ -26,7 +26,7 @@
         <form action="./auth.php" method="POST">
           <div class="input-group">
             <label for="username">Nom d'utilisateur</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="login" required>
           </div>
           <div class="input-group">
             <label for="password">Mot de passe</label>
