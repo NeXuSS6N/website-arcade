@@ -1,22 +1,36 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/accueil.css">
-    <link rel="stylesheet" href="./css/jeux.css">
+    <link rel="stylesheet" href="../css/accueil.css">
+    <link rel="stylesheet" href="../css/jeux.css">
     <title>Jeux</title>
 </head>
+
 <body>
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="./accueil.html">ArcadeLab</a>
+                <a href="../php/accueil.php">ArcadeLab</a>
             </div>
             <ul class="nav-links">
-                <li><a href="./accueil.html">Accueil</a></li>
-                <li><a href="./jeux.html">Jeux</a></li>
-                <li><a href="./php/login.php">Connexion</a></li>
+                <li><a href="../php/accueil.php">Accueil</a></li>
+                <li><a href="../php/jeux.php">Jeux</a></li>
+
+                <?php
+                if (isset($_SESSION['login'])) {
+                    echo '<li><a href="../php/profil.php">' . $_SESSION['login'] . '</a></li>';
+                } else {
+                    echo '<li><a href="../php/login.php">Connexion</a></li>';
+                }
+                ?>
+
             </ul>
         </div>
     </nav>
@@ -37,8 +51,10 @@
             <p>League Of Legends</p>
             <button class="play-button">Jouer</button>
         </div>
-        
-        
+
+
     </section>
+    <?php include 'footer.php'; ?>
 </body>
+
 </html>

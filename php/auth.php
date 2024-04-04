@@ -95,7 +95,7 @@
 //------------------------------------
     $msg = "";
 
-    $sql = "SELECT A_Mdp
+    $sql = "SELECT A_Mdp, A_Username
             FROM account
             WHERE A_Username = :login";
     $stmt = $pdo_conn->prepare($sql);
@@ -105,7 +105,7 @@
     if ($stmt->rowCount() == 1) 
     {
         $row = $stmt->fetch();
-        $pwd_hashed = $row["password"];
+        $pwd_hashed = $row["A_Mdp"];
 
         if (password_verify($pwd_unhashed, $pwd_hashed)) {
 
@@ -117,11 +117,13 @@
             // /\__/ /  __/ |_  /\__/ / |___/\__/ /\__/ /_| |_\ \_/ / |\  |
             // \____/ \___|\__| \____/\____/\____/\____/ \___/ \___/\_| \_/
             //------------------------------------
-            $_SESSION['user'] = $row['login'];
+            // $_SESSION['user'] = $row['A_Username'];
+            $_SESSION['user'] = $login;
             $_SESSION['loggedIn'] = true;
+            $_SESSION['login'] = $login;
             //------------------------------------
         } else {
-            $msg = $msg . "Password incorrect.";
+            $msg = $msg . "Le mot de passe est incorrect.";
         }
         
     }

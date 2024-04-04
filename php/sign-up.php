@@ -16,12 +16,12 @@
   <nav>
     <div class="nav-content">
       <div class="logo">
-        <a href="./accueil.html">ArcadeLab</a>
+        <a href="./accueil.php">ArcadeLab</a>
       </div>
       <ul class="nav-links">
-        <li><a href="./accueil.html">Accueil</a></li>
-        <li><a href="./jeux.html">Jeux</a></li>
-        <li><a href="./login.php">Connexion</a></li>
+        <li><a href="../php/accueil.php">Accueil</a></li>
+        <li><a href="../php/jeux.php">Jeux</a></li>
+        <li><a href="../php/login.php">Connexion</a></li>
       </ul>
     </div>
   </nav>
