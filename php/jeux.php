@@ -37,17 +37,17 @@ session_start();
 
     <section class="carousel">
         <div class="game">
-            <img src="./assets/wow.png" alt="Wow">
+            <img src="../assets/wow.png" alt="Wow">
             <p>World Of Warcraft</p>
             <button class="play-button">Jouer</button>
         </div>
         <div class="game">
-            <img src="./assets/soulsbreaker.png" alt="CasseBrique">
+            <img src="../assets/soulsbreaker.png" alt="CasseBrique">
             <p>Souls Breaker</p>
             <button class="play-button">Jouer</button>
         </div>
         <div class="game">
-            <img src="./assets/lol.png" alt="Leagie Of Legends">
+            <img src="../assets/lol.png" alt="Leagie Of Legends">
             <p>League Of Legends</p>
             <button class="play-button">Jouer</button>
         </div>

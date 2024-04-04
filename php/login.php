@@ -1,3 +1,7 @@
+<?php session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +25,8 @@
 
         <?php
         if (isset($_SESSION['login'])) {
-          echo '<li>' . $_SESSION['login'] . '</li>';
+          echo '<li><a href="../php/profil.php">' . $_SESSION['login'] . '</a></li>';
+          header("Location: ../php/profil.php");
         } else {
           echo '<li><a href="../php/login.php">Connexion</a></li>';
         }
