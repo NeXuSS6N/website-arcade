@@ -1,5 +1,10 @@
 <?php
 session_start();
+$Id = isset($_SESSION['Id']) ? $_SESSION['Id'] : ''; // Assigne l'ID de session à la variable $Id
+
+if (isset($_SESSION["Loggedin"])) {
+  $user = $_SESSION["Loggedin"];
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,13 +42,20 @@ session_start();
 
   <div class="profil">
     <div class="profil-text">
-      <h2>Profil de <?php echo $_SESSION['login']; ?></h2>
-      <!-- Ajouter ici un formulaire pour télécharger une photo de profil -->
-      <div class="profil-image">
-        <!-- Afficher ici la photo de profil si elle existe -->
-      </div>
+      <h2>Profil de
+        <?php echo $_SESSION['login']; ?>
+      </h2>
+      <?php if ($_SESSION['login'] === 'Admin'): ?>
+
+        <?php require_once "./users.php" ?>
+
+        <div class="profil-image">
+          <img src="../assets/defaultjeu.png">
+        </div>
+      <?php endif; ?>
     </div>
   </div>
+
   <?php include 'footer.php'; ?>
 </body>
 
