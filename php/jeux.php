@@ -1,5 +1,10 @@
 <?php
 session_start();
+$Id = isset($_SESSION['Id']) ? $_SESSION['Id'] : ''; // Assigne l'ID de session à la variable $Id
+
+if (isset($_SESSION["Loggedin"])) {
+  $user = $_SESSION["Loggedin"];
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +60,6 @@ session_start();
 
     </section>
     <?php include 'footer.php'; ?>
-</body>
+</body> 
 
 </html>

@@ -1,0 +1,65 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h5 {
+    margin-bottom: 5px;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style spécifique pour les formulaires dans la section des utilisateurs */
+.user-forms {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.user-forms form {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.user-forms input[type="text"],
+.user-forms input[type="email"],
+.user-forms input[type="password"] {
+    width: 150px;
+}
+
+.user-forms button {
+    padding: 3px 6px;
+    font-size: 12px;
+}
