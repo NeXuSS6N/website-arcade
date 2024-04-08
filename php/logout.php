@@ -1,26 +1,32 @@
 <?php
-// Initialize the session
+
+// Démarre la session
 session_start();
 
-// Unset all session variables
+// Vide les données de la session
 $_SESSION = array();
 
-// If it's desired to kill the session, also delete the session cookie
-// Note: This will destroy the session, and not just the session data
+// Si les cookies de session sont utilisés, détruit le cookie de session
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
-    setcookie(session_name(), '', time() - 42000,
-        $params["path"], $params["domain"],
-        $params["secure"], $params["httponly"]
+    setcookie(
+        session_name(),
+        '',
+        time() - 42000,
+        $params["path"],
+        $params["domain"],
+        $params["secure"],
+        $params["httponly"]
     );
 }
 
+// Définit la variable de session "loggedin" sur false
 $_SESSION["loggedin"] = false;
 
-// Finally, destroy the session
+// Détruit la session
 session_destroy();
 
-// Redirect to login page
+// Redirige vers la page de connexion
 header("Location: ../php/login.php");
 exit;
 ?>

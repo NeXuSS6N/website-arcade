@@ -9,12 +9,14 @@ session_start();
 // | \__/\ | | |  __/ (__|   < 
 //  \____/_| |_|\___|\___|_|\_\
 //------------------------------------  
+// Vérifie si la méthode HTTP est POST
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     $msg = "Méthode POSt attendue. Reçu :" . $_SERVER["REQUEST_METHOD"];
     header("Location: error.php?msg=" . $msg);
     exit();
 }
 
+// Récupère les valeurs du formulaire
 $login = isset($_POST['login']) ? $_POST['login'] : "";
 $pwd_unhashed = isset($_POST['password']) ? $_POST['password'] : "";
 
@@ -29,7 +31,9 @@ $pwd_unhashed = isset($_POST['password']) ? $_POST['password'] : "";
 // | |   | '_ \ / _ \/ __| |/ / |  __| '__| '__/ _ \| '__|
 // | \__/\ | | |  __/ (__|   <  | |__| |  | | | (_) | |   
 //  \____/_| |_|\___|\___|_|\_\ \____/_|  |_|  \___/|_|   
-//------------------------------------                                                  
+//------------------------------------                    
+
+// Vérifie si les champs requis ne sont pas vides
 if (
     $login == "" ||
     $pwd_unhashed == ""
@@ -57,6 +61,7 @@ if (
 //  _| || | | | | |_  | |/ /| |_/ /
 //  \___/_| |_|_|\__| |___/ \____/ 
 //------------------------------------
+// Paramètres de connexion à la base de données
 $host = 'localhost';
 $user = 'root';
 $password = '';
@@ -105,8 +110,10 @@ if ($stmt->rowCount() == 1) {
     $row = $stmt->fetch();
     $pwd_hashed = $row["A_Mdp"];
 
+
+    // Vérifie si le mot de passe est correct
     // if (password_verify($pwd_unhashed, $pwd_hashed)) {
-        if ($pwd_unhashed === $pwd_hashed) {
+    if ($pwd_unhashed === $pwd_hashed) {
 
         //------------------------------------
         //  _____      _     _____ _____ _____ _____ _____ _____ _   _ 
@@ -136,7 +143,8 @@ if ($stmt->rowCount() == 1) {
 // |    // _ \/ _` | | '__/ _ \/ __| __|
 // | |\ \  __/ (_| | | | |  __/ (__| |_ 
 // \_| \_\___|\__,_|_|_|  \___|\___|\__|
-//------------------------------------             
+//------------------------------------     
+// Redirige vers la page d'erreur si un message d'erreur est présent        
 if ($msg != "") {
     header("Location: error.php?msg=" . $msg);
     exit();
