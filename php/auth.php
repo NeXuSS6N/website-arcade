@@ -94,7 +94,7 @@ try {
 //------------------------------------
 $msg = "";
 
-$sql = "SELECT A_Mdp, A_Username
+$sql = "SELECT *
             FROM account
             WHERE A_Username = :login";
 $stmt = $pdo_conn->prepare($sql);
@@ -115,11 +115,11 @@ if ($stmt->rowCount() == 1) {
         // /\__/ /  __/ |_  /\__/ / |___/\__/ /\__/ /_| |_\ \_/ / |\  |
         // \____/ \___|\__| \____/\____/\____/\____/ \___/ \___/\_| \_/
         //------------------------------------
-        // $_SESSION['user'] = $row['A_Username'];
         $_SESSION['user'] = $login;
         $_SESSION['loggedIn'] = true;
         $_SESSION['login'] = $login;
         $_SESSION['Id'] = $row['A_Id'];
+
         //------------------------------------
     } else {
         $msg = $msg . "Le mot de passe est incorrect.";

@@ -1,6 +1,5 @@
 <?php
 session_start();
-$Id = isset($_SESSION['Id']) ? $_SESSION['Id'] : ''; // Assigne l'ID de session à la variable $Id
 
 if (isset($_SESSION["Loggedin"])) {
   $user = $_SESSION["Loggedin"];
@@ -28,6 +27,10 @@ if (isset($_SESSION["Loggedin"])) {
         <li><a href="./accueil.php">Accueil</a></li>
         <li><a href="../php/jeux.php">Jeux</a></li>
 
+
+<?php var_dump($_SESSION) ?>
+
+
         <?php
         if (isset($_SESSION['login'])) {
           echo '<li><a href="../php/profil.php">' . $_SESSION['login'] . '</a></li>';
@@ -39,13 +42,12 @@ if (isset($_SESSION["Loggedin"])) {
       </ul>
     </div>
   </nav>
-
   <div class="profil">
     <div class="profil-text">
       <h2>Profil de
         <?php echo $_SESSION['login']; ?>
       </h2>
-      <?php if ($_SESSION['login'] === 'Admin'): ?>
+      <?php if ($_SESSION['Id'] === '100'): ?>
 
         <?php require_once "./users.php" ?>
 
@@ -55,7 +57,6 @@ if (isset($_SESSION["Loggedin"])) {
       <?php endif; ?>
     </div>
   </div>
-
   <?php include 'footer.php'; ?>
 </body>
 
