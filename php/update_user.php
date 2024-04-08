@@ -2,7 +2,6 @@
 require_once "./DB_Conn.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_id = $_POST['user_id'];
     $new_username = $_POST['new_username'];
     $new_email = $_POST['new_email'];
     $new_password = $_POST['new_password'];

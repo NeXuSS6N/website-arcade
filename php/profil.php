@@ -28,9 +28,6 @@ if (isset($_SESSION["Loggedin"])) {
         <li><a href="../php/jeux.php">Jeux</a></li>
 
 
-<?php var_dump($_SESSION) ?>
-
-
         <?php
         if (isset($_SESSION['login'])) {
           echo '<li><a href="../php/profil.php">' . $_SESSION['login'] . '</a></li>';
@@ -47,14 +44,14 @@ if (isset($_SESSION["Loggedin"])) {
       <h2>Profil de
         <?php echo $_SESSION['login']; ?>
       </h2>
-      <?php if ($_SESSION['Id'] === '100'): ?>
+      <?php if ($_SESSION['Id'] === 100): ?>
 
         <?php require_once "./users.php" ?>
-
-        <div class="profil-image">
-          <img src="../assets/defaultjeu.png">
-        </div>
       <?php endif; ?>
+
+      <div class="profil-image">
+        <img src="../assets/defaultjeu.png">
+      </div>
     </div>
   </div>
   <?php include 'footer.php'; ?>

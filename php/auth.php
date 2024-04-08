@@ -105,7 +105,8 @@ if ($stmt->rowCount() == 1) {
     $row = $stmt->fetch();
     $pwd_hashed = $row["A_Mdp"];
 
-    if (password_verify($pwd_unhashed, $pwd_hashed)) {
+    // if (password_verify($pwd_unhashed, $pwd_hashed)) {
+        if ($pwd_unhashed === $pwd_hashed) {
 
         //------------------------------------
         //  _____      _     _____ _____ _____ _____ _____ _____ _   _ 
