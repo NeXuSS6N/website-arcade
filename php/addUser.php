@@ -23,17 +23,12 @@ if (isset($_POST['email'])) {
     $email = false;
 }
 
-// Vérifie et récupère le nom et le prénom
-$pattern = '/^[A-Za-z]+$/';
-$nom = (isset($_POST['nom']) && preg_match($pattern, $_POST['nom'])) ? $_POST['nom'] : "";
-$prenom = (isset($_POST['prenom']) && preg_match($pattern, $_POST['prenom'])) ? $_POST['prenom'] : "";
-// $login = (isset($_POST['login']) && preg_match($pattern, $_POST['login'])) ? $_POST['login'] : "";
+
 
 // Récupère le login
 $login = isset($_POST['login']) ? $_POST['login'] : "";
 
 // Vérifie et récupère les mots de passe
-$pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$!%*?&])[A-Za-z\d$!%*?&]{8,}$/';
 $pwd_unhashed = isset($_POST['password']) ? $_POST['password'] : "";
 $pwd_unhashed_check = isset($_POST['password_check']) ? $_POST['password_check'] : "";
 
@@ -160,7 +155,8 @@ if ($msg != "") {
 // | |/ /| |_/ /  _| || | | \__ \  __/ |  | |_ 
 // |___/ \____/   \___/_| |_|___/\___|_|   \__|                                    
 //------------------------------------          
-$pwd_hashed = password_hash($pwd_unhashed, PASSWORD_DEFAULT);
+//$pwd_hashed = password_hash($pwd_unhashed, PASSWORD_DEFAULT);
+$pwd_hashed = $pwd_unhashed ; //password_hash($pwd_unhashed, PASSWORD_DEFAULT);
 
 // Insère l'utilisateur dans la base de données
 $sql = "INSERT INTO account (A_Username, A_Mdp, A_Mail) 
